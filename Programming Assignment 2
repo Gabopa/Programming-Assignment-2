@@ -1,0 +1,33 @@
+## Put comments here that give an overall description of what your
+## functions do
+
+## Write a short comment describing this function
+
+##The following function makeCacheMatrix creates a special kind of matrix
+
+makeCacheMatrix <- function(x=matrix()){ ##define a function 'makeCacheMatrix' 
+  n <- Null
+  set <- function(y){
+    x <<- y ##assign the input variable y into variable x
+    n <<- NULL ##define a function 'n' and initialize it to Null
+  }
+  get <- function() x ##return the matrix x
+  setsolve<-function(solve) n<<-solve
+  getsolve<-function() n
+  list(set=set, get=get, setsolve=setsolve, getsolve=getsolve)
+       
+}
+
+## Write a short comment describing this function
+
+cacheSolve <- function(x, ...) {
+        ## Return a matrix that is the inverse of 'x'
+   n<-x$getsolve()
+   if(!is.null(s)) {
+     message("getting solved data or inverse matrix")
+     return(s)
+   }
+   data<-x$get()
+   n<-solve(data,...)
+   x$setsolve(s)
+   n
